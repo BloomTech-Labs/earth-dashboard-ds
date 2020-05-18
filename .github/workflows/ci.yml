@@ -28,7 +28,29 @@ jobs:
         run: 
           pip install pytest
           pytest
+      
+      - name: set PY
+        run: echo "::set-env name=PY::$(python --version --version | sha256sum | cut -d' ' -f1)"
+      - uses: actions/cache@v1
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+        
+      - name: Lint with Pre-commit
+        uses: pre-commit/action@v1.0.1
+      
+      - name: intall requirements.txt
+        run: pip install -r requirements.txt
+        
+      - name: Code Climate Coverage Action
+        uses: paambaati/codeclimate-action@v2.3.0
+        if: matrix.py_ver == '3.7'
+        env:
+          CC_TEST_REPORTER_ID: 05f6288b94a87daa172d3e96a33ec331a4374be7d01eb9a42b3b21c4c550a8ff
+        with:
+          coverageCommand: coverage xml
           
+          debug: true
         
       
 
@@ -41,14 +63,14 @@ jobs:
       #- run: npm install
 
       # A GitHub action for running tests and publishing coverage
-      - uses: paambaati/codeclimate-action@v2.4.0
-        env:
-          # An environment variable, the value is a GitHub repo secret
-          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+      #- uses: paambaati/codeclimate-action@v2.4.0
+       # env:
+      #    # An environment variable, the value is a GitHub repo secret
+        #  CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
        # with:
           # Run our `coverage` script in our `package.json`
           #coverageCommand: npm run test:CI
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage/clover.xml:clover"
+         # coverageLocations: "./coverage/clover.xml:clover"
           # Great for troubleshooting
-          debug: true
+          #debug: true
