@@ -31,7 +31,7 @@ jobs:
       
       
       - name: intall requirements.txt
-        run: pip install -r requirements.txt
+        run: pip install -r earth-dashboard-ds/FLASK_RC1.2/requirements.txt
         
       - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v2.3.0
