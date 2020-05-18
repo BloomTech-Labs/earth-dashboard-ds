@@ -29,15 +29,6 @@ jobs:
           pip install pytest
           pytest
       
-      - name: set PY
-        run: echo "::set-env name=PY::$(python --version --version | sha256sum | cut -d' ' -f1)"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
-        
-      - name: Lint with Pre-commit
-        uses: pre-commit/action@v1.0.1
       
       - name: intall requirements.txt
         run: pip install -r requirements.txt
