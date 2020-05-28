@@ -7,7 +7,7 @@
   "main": "index.py",
   "scripts": {
     "start": "python index.py",
-    "test": "dependecies --devDependencies --forceExit || true"
+    "test": " --forceExit || true"
   },
 
   "dependencies": {
