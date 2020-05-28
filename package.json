@@ -6,7 +6,8 @@
   "author": "William M. <wmooney1984@gmail.com>",
   "main": "index.py",
   "scripts": {
-
+    "start": "python index.py",
+    "test": "jest --dependecies --devDependencies --forceExit || true"
   },
 
   "dependencies": {
