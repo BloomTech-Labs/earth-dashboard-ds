@@ -6,8 +6,8 @@
   "author": "William M. <wmooney1984@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "start": ,
-    "test": 
+  "start": "node index.js",
+  "test": dependencies || true,
   },
 
   "dependencies": {
