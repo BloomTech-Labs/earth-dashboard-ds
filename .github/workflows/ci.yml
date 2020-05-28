@@ -41,5 +41,5 @@ jobs:
           # Run our `coverage` script in our `package.json`
           coverageCommand: npm run test
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage/clover.xml:clover"
+          #coverageLocations: "./coverage/clover.xml:clover"
           # Great for trouble
