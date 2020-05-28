@@ -1,0 +1,18 @@
+{
+  "name": "earth-dashboard-ds",
+  "version": "1.0.0",
+  "repository": "https://github.com/Lambda-School-Labs/earth-dashboard-ds.git",
+  "license": "MIT",
+  "author": "William M. <wmooney1984@gmail.com>",
+  "main": "index.py",
+  "scripts": {
+
+  },
+
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    
+  }
+}
