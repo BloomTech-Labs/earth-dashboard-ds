@@ -4,9 +4,9 @@
   "repository": "https://github.com/Lambda-School-Labs/earth-dashboard-ds.git",
   "license": "MIT",
   "author": "William M. <wmooney1984@gmail.com>",
-  "main": "index.py",
+  "main": ,
   "scripts": {
-    "start": "python index.py",
+    "start": ,
     "test": 
   },
 
