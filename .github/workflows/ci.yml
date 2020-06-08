@@ -38,7 +38,8 @@ jobs:
       #    node-version: "12"
 
       # Run the NPM install command before proceeding
-      #- run: pip install coverage
+      - run: pip install coverage
+             cocverage
 
       # A GitHub action for running tests and publishing coverage
       - uses: paambaati/codeclimate-action@v2.4.0
