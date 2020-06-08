@@ -1,35 +1,16 @@
-version: "2"         # required to adjust maintainability checks
+
+# .codeclimate.yml
+version: "2"
 checks:
-  argument-count:
-    config:
-      threshold: 4
-  complex-logic:
-    config:
-      threshold: 4
-  file-lines:
-    config:
-      enabled: false
-  method-complexity:
-    config:
-      threshold: 5
-  method-count:
-    config:
-      threshold: 20
+  # Disable checks for similar code.
+  # Because this creates too many false positives.
+  similar-code:
+    enabled: false
+  # Increase the number of lines allowed for a method.
+  # Because this is more reasonable for JavaScript.
   method-lines:
     config:
-      enabled: false
-  nested-control-flow:
-    config:
-      threshold: 4
-  return-statements:
-    config:
-      threshold: 4
-  similar-code:
-    config:
-      enabled: false
-  identical-code:
-    config:
-      enabled: false
+      threshold: 50
 plugins:
   pep8:
     enabled: true
