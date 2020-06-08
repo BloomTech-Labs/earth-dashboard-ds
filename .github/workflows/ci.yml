@@ -12,10 +12,8 @@ jobs:
     name: Test and publish test coverage
     # The OS on which the job will run
     runs-on: ubuntu-latest
-
     # The steps for the job, executed in sequence
     steps:
-
       # A GitHub action for checking out the current branch
       - uses: actions/checkout@master
 
@@ -29,17 +27,17 @@ jobs:
           pip install pytest
           pytest
 
-      # Run the NPM install command before proceeding
-      #- run: npm install
-
+      # Run the yarn install command before proceeding
+      - run: yarn install
       # A GitHub action for running tests and publishing coverage
-      #- uses: paambaati/codeclimate-action@v2.4.0
-        #env:
+      - uses: paambaati/codeclimate-action@v2.4.0
+        env:
           # An environment variable, the value is a GitHub repo secret
-          #CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
-        #with:
+          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+
+        with:
           # Run our `coverage` script in our `package.json`
-          #coverageCommand: npm run test
+          coverageCommand: yarn run coverage
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          #coverageLocations: "./coverage/clover.xml:clover"
-          # Great for trouble
+          coverageLocations: "./coverage/clover.xml:clover"
+          debug: true
