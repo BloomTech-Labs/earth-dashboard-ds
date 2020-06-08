@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/89fe2c715447b3929eab/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/earth-dashboard-ds/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/89fe2c715447b3929eab/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/earth-dashboard-ds/test_coverage)
-![Coveralls github](https://img.shields.io/coveralls/github/Lambda-School-Labs/earth-dashboard-ds?label=Code%20Coverage)
+[![codecov](https://codecov.io/gh/Lambda-School-Labs/earth-dashboard-ds/branch/master/graph/badge.svg)](https://codecov.io/gh/Lambda-School-Labs/earth-dashboard-ds)
 # Earth Dashboard
 
 You can find the project at [Planet Data](planetdata.world).
