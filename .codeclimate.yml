@@ -29,7 +29,7 @@ checks:
       enabled: false
   identical-code:
     config:
-      threshold: 20
+      enabled: false
 plugins:
   pep8:
     enabled: true
