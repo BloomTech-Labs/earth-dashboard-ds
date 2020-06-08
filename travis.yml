@@ -18,6 +18,7 @@ python:
 # Install the codecov pip dependency
 install:
   - pip install codecov
+  - pip install coverage
 
 # Run the unit test
 script:
