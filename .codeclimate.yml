@@ -26,10 +26,10 @@ checks:
       threshold: 4
   similar-code:
     config:
-      enabled: false
+      threshold: 10
   identical-code:
     config:
-      enabled: false
+      threshold: 10
 plugins:
   pep8:
     enabled: true
