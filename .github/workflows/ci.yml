@@ -39,10 +39,6 @@ jobs:
 
       # Run the NPM install command before proceeding
       - run: pip install coverage
-        
-      - run: pipenv install
-    
-
 
       # A GitHub action for running tests and publishing coverage
       - uses: paambaati/codeclimate-action@v2.4.0
