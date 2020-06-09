@@ -28,6 +28,14 @@ jobs:
         run:
           pip install pytest
           pytest
+      
+      - name: Install pew
+        run:
+          pip install pew
+          
+      - name: Install pipfile
+        run:
+          pew workon FLASK_RC1/Pipfile
           
       - name: Intall pipenv   
         run:
