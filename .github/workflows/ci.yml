@@ -30,9 +30,9 @@ jobs:
           pytest
 
       # A GitHub action to setup Node.js
-      #- uses: actions/setup-node@master
-      #  with:
-      #    node-version: "12"
+      - uses: actions/setup-node@master
+        with:
+          node-version: "12"
 
       # Run the NPM install command before proceeding
       - run: pip install coverage
