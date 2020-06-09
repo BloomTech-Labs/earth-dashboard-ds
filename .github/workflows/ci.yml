@@ -43,7 +43,6 @@ jobs:
       - run: npm install
       - run: npm install -g yarn
       - run: yarn install
-      - run: yarn build
 
       # A GitHub action for running tests and publishing coverage
       - uses: paambaati/codeclimate-action@v2.4.0
