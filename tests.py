@@ -1,6 +1,6 @@
 # run tests: python -m application.test
 # Hoping to implement pytest stuff soon 5/20/20
-!pip install flask_testing
+pip install Flask-Testing
 from flask_testing import TestCase
 
 try:
