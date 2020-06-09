@@ -5,16 +5,7 @@
   "scripts": {
     "analyze": "yarn run build && source-map-explorer 'build/static/js/*.js'",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:CI": "CI=true coverage run test.py --coverage --watchAll=false || true",
-    
-  },
-  "husky": {
-  },
-  "lint-staged": {
-  },
-  "browserslist": {
-  },
-  "eslintConfig": {
+    "test:CI": "CI=true coverage run test.py --coverage --watchAll=false || true",  
   },
   "jest": {
     "collectCoverageFrom": [
@@ -23,9 +14,5 @@
       "!**/vendor/**",
       "!**/__tests__/**"
     ]
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
   }
 }
