@@ -28,7 +28,12 @@ jobs:
         run:
           pip install pytest
           pytest
-
+          
+      - name: Intall pipfile   
+        run:
+          pip install pipenv
+          pipenv install
+          
       # A GitHub action for checking out the current branch
       - uses: actions/checkout@master
 
