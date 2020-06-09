@@ -7,8 +7,7 @@ checks:
     config:
       threshold: 4
   file-lines:
-    config:
-      threshold: 10000
+    enabled: false
   method-complexity:
     config:
       threshold: 5
@@ -25,11 +24,9 @@ checks:
     config:
       threshold: 4
   similar-code:
-    config:
-      threshold: 20
+    enabled: false
   identical-code:
-    config:
-      threshold: 20
+    enabled: false
 plugins:
   pep8:
     enabled: true
