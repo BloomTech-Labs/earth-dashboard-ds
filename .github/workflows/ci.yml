@@ -33,9 +33,9 @@ jobs:
       - uses: actions/checkout@master
 
       # A GitHub action to setup Node.js
-      - uses: actions/setup-node@master
-        with:
-          node-version: "12"
+      #- uses: actions/setup-node@master
+      #  with:
+      #    node-version: "12"
 
       # Run the NPM install command before proceeding
       - run: pip install coverage
@@ -49,6 +49,6 @@ jobs:
           # Run our `coverage` script in our `package.json`
           coverageCommand: coverage run tests.py
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage/clover.xml:clover"
+          coverageLocations: "./github/clover.xml:clover"
           # Great for troubleshooting
           debug: true
