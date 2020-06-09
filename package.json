@@ -1,0 +1,31 @@
+{
+  "name": "earth-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "analyze": "yarn run build && source-map-explorer 'build/static/js/*.js'",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:CI": "CI=true coverage run test.py --coverage --watchAll=false || true",
+    
+  },
+  "husky": {
+  },
+  "lint-staged": {
+  },
+  "browserslist": {
+  },
+  "eslintConfig": {
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/__tests__/**"
+    ]
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
