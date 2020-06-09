@@ -29,9 +29,12 @@ jobs:
           pip install pytest
           pytest
           
-      - name: Intall pipfile   
+      - name: Intall pipenv   
         run:
           pip install pipenv
+          
+      - name: Intall pipfile 
+        run:
           pipenv install
           
       # A GitHub action for checking out the current branch
