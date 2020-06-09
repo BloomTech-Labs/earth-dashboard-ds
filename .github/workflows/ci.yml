@@ -40,7 +40,7 @@ jobs:
       # Run the NPM install command before proceeding
       - run: pip install coverage
         
-      - run: install -r requirements.txt
+      - run: pipenv install
     
 
 
