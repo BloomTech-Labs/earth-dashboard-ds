@@ -58,7 +58,7 @@ jobs:
            ./cc-test-reporter before-build
         with:
           # Run our `coverage` script in our `package.json`
-          coverageCommand: coverage run tests.py
+          coverageCommand: npm run tests.py
            ./cc-test-reporter upload-coverage
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
           #coverageLocations: "earth-dashboard-ds/clover.xml:clover"
