@@ -40,12 +40,7 @@ jobs:
           node-version: "12"
 
       # Run the NPM install command before proceeding
-      #- run: npm install
-      - name: YOURSERVICE
-        run: cc-test-reporter before-build
-        
-      - name: YOURSERVICE  
-        run: cc-test-reporter after-build --exit-code $?
+      - run: npm install
         
       # A GitHub action for running tests and publishing coverage
       - uses: paambaati/codeclimate-action@v2.4.0
@@ -56,6 +51,6 @@ jobs:
           # Run our `coverage` script in our `package.json`
           coverageCommand: coverage run tests.py
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage/clover.xml:clover"
+          #coverageLocations: "./coverage/clover.xml:clover"
           # Great for troubleshooting
           debug: true
