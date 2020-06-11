@@ -51,6 +51,6 @@ jobs:
           # Run our `coverage` script in our `package.json`
           coverageCommand: coverage run tests.py
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage.xml -o"
+          coverageLocations: "./coverage.xml/coverage.py -o"
           # Great for troubleshooting
           debug: true
