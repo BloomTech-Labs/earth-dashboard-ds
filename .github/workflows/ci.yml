@@ -49,8 +49,8 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
           # Run our `coverage` script in our `package.json`
-          coverageCommand: coverage run tests.py
+          coverageCommand: coverage run tests.py -o
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage.xml/coverage.py -o"
+          coverageLocations: "./coverage.xml/coverage.py"
           # Great for troubleshooting
           debug: true
