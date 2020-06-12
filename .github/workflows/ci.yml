@@ -35,7 +35,7 @@ jobs:
           coverage
           
       - name: Run tests
-        run: /FLASK_RC1/application.test
+        run: "/FLASK_RC1/application/test.py"
 
 
 
