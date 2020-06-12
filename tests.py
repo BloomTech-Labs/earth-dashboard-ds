@@ -1,8 +1,6 @@
-import unittest
+import os, pathlib
+import pytest
 
-class TestMethods(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(3, 3)
+os.chdir( pathlib.Path.cwd() / 'application' )
 
-if __name__ == '__main__':
-    unittest.main()
+pytest.main()
