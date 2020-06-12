@@ -35,7 +35,7 @@ jobs:
           coverage
           
       - name: Run tests
-        run: coverage run test.py
+        run: coverage run tests.py
 
 
 
