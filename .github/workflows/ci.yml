@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - all
     tags:
       - '!*' # Do not execute on tags
     paths:
