@@ -23,7 +23,13 @@ jobs:
         uses: actions/setup-python@master
         with:
           python-version: 3.8
-
+      
+      - name: pipenv
+        run: 
+          cd earth-dashboard-ds/FLASK_RC1
+          pip install pipenv 
+          pipenv shell
+          
       - name: Run unit tests
         run:
           pip install pytest
@@ -38,9 +44,9 @@ jobs:
         run:
           coverage run tests.py
           
-      - name: Run Flask tests doc
-        run:
-          coverage run test.py
+      #- name: Run Flask tests doc
+      #  run:
+      #    coverage run test.py
         
       
       # A GitHub action to setup Node.js
