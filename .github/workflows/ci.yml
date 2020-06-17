@@ -1,69 +1,52 @@
-# The name of the workflow
 name: build
-
-# What conditions trigger the workflow
-#  In this case, all pushes and pull requests
-on: [push, pull_request]
-
-# The jobs that will be run, usually in parallel
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '!*' # Do not execute on tags
+    paths:
+      - src/*
+      - test/*
+      - '*.json'
+      - yarn.lock
+  pull_request:
+    paths:
+      - '!*.MD'
 jobs:
-  # A job to generate and publish code coverage
-  coverage:
-    name: Test and publish test coverage
-    # The OS on which the job will run
-    runs-on: ubuntu-latest
-
-    # The steps for the job, executed in sequence
+  test:
+    strategy:
+      matrix:
+        platform: [ ubuntu-latest, macOS-latest ]
+        node: [ '12', '10' ]
+    name: test/node ${{ matrix.node }}/${{ matrix.platform }}
+    runs-on: ${{ matrix.platform }}
     steps:
-
-      # A GitHub action for checking out the current branch
-      - uses: actions/checkout@master
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-       
-      - name: Run unit tests
-        run:
-          pip install pytest
-          pytest
-
-      - name: Install coverage
-        run:
-          pip install coverage
-          coverage
-          
-     # - name: Run Flask tests
-     #   working-directory: earth-dashboard-ds/FLASK_RC1/application
-     #   run: 
-     #     python test.py
-          
-      - name: Run tests doc
-        run:
-          coverage run tests.py
-          
-      #- name: Run Flask tests doc
-      #  run:
-      #    coverage run test.py
-        
-      
-      # A GitHub action to setup Node.js
-      - uses: actions/setup-node@master
-        with:
-          node-version: "12"
-
-      # Run the NPM install command before proceeding
-      #- run: npm install
-
-      # A GitHub action for running tests and publishing coverage
-      - uses: paambaati/codeclimate-action@v2.4.0
-        env:
-          # An environment variable, the value is a GitHub repo secret
-          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
-        with:
-          # Run our `coverage` script in our `package.json`
-          coverageCommand: coverage.py
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: ${{ matrix.node }}
+    - run: npm install -g yarn
+    - run: yarn install
+    - run: yarn build
+    - run: yarn test
+  coverage:
+    needs: [ test ]
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '12'
+    - run: npm install -g yarn
+    - run: yarn install
+    - run: yarn build
+    - uses: paambaati/codeclimate-action@v2.2.4
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+      with:
+        coverageCommand: yarn coverage
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
      #     coverageLocations: "./coverage/clover.xml:clover"
           # Great for troubleshooting
