@@ -27,7 +27,6 @@ jobs:
       - name: pipenv
         run: 
           cd earth-dashboard-ds/FLASK_RC1
-          pip install pipenv 
           
       - name: Run unit tests
         run:
