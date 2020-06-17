@@ -23,13 +23,7 @@ jobs:
         uses: actions/setup-python@master
         with:
           python-version: 3.8
-      
-      - name: pipenv
-        working-directory: earth-dashboard-ds/FLASK_RC1/application
-        run: 
-          run python test.py
-        
-          
+       
       - name: Run unit tests
         run:
           pip install pytest
@@ -39,6 +33,11 @@ jobs:
         run:
           pip install coverage
           coverage
+          
+      - name: Run Flask tests
+        working-directory: earth-dashboard-ds/FLASK_RC1/application
+        run: 
+          coverage run test.py
           
       - name: Run tests doc
         run:
