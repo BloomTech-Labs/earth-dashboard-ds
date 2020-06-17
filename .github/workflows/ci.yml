@@ -18,6 +18,7 @@ jobs:
 
       # A GitHub action for checking out the current branch
       - uses: actions/checkout@master
+        
       - uses: earth-dashboard-ds/FLASK_RC1
 
       - name: Set up Python
@@ -28,6 +29,7 @@ jobs:
       - name: pipenv
         run: 
           pip install pipenv
+          pipenv
           
       - name: Run unit tests
         run:
