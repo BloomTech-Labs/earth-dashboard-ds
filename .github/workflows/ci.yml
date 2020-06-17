@@ -28,7 +28,7 @@ jobs:
         working-directory: earth-dashboard-ds/FLASK_RC1
         run: 
           pip install pipenv
-          pipenv shell
+          pipenv
         
           
       - name: Run unit tests
