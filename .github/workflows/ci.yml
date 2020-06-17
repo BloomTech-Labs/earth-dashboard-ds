@@ -33,7 +33,13 @@ jobs:
         run:
           pip install coverage
           coverage
-
+          
+      - name: Run tests doc
+        run:
+          coverage run tests.py
+          
+      
+      
       # A GitHub action to setup Node.js
      # - uses: actions/setup-node@master
      #   with:
