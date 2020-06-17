@@ -38,7 +38,10 @@ jobs:
         run:
           coverage run tests.py
           
-      
+      - name: Run Flask tests doc
+        run:
+          coverage run earth-dashboard-ds/FLASK_RC1/application/test.py
+          
       
       # A GitHub action to setup Node.js
      # - uses: actions/setup-node@master
