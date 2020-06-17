@@ -25,9 +25,9 @@ jobs:
           python-version: 3.8
       
       - name: pipenv
-        working-directory: earth-dashboard-ds/FLASK_RC1
+        working-directory: earth-dashboard-ds/FLASK_RC1/application
         run: 
-          pip install pipenv
+          run python test.py
         
           
       - name: Run unit tests
