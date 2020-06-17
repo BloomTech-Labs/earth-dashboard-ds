@@ -37,9 +37,6 @@ jobs:
       - name: Run test doc
         run:
           coverage run tests.py
-          
-      - name: Run Flask test doc
-      - run: python -m application.test
         
      # - name: Run Flask test doc
      #   working-directory: earth-dashboard-ds/FLASK_RC1/application/
