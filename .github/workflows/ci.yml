@@ -11,7 +11,7 @@ jobs:
   coverage:
     name: Test and publish test coverage
     # The OS on which the job will run
-    runs-on: [macos-latest, windows-latest, ubuntu-latest]
+    runs-on: macos-latest, windows-latest, ubuntu-latest
 
     # The steps for the job, executed in sequence
     steps:
