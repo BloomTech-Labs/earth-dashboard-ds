@@ -3,13 +3,8 @@ name: build
 
 # What conditions trigger the workflow
 #  In this case, all pushes and pull requests
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'versions-manifest.json'
-    
+on: [push, pull_request]
+  
 # The jobs that will be run, usually in parallel
 jobs:
   setup-versions-from-manifest:
