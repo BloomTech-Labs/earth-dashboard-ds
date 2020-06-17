@@ -3,15 +3,29 @@ name: build
 
 # What conditions trigger the workflow
 #  In this case, all pushes and pull requests
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'versions-manifest.json'
+    
 # The jobs that will be run, usually in parallel
 jobs:
+  setup-versions-from-manifest:
+    name: Setup ${{ matrix.python }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+        python: [3.5.4, 3.6.7, 3.7.5, 3.8.1]
+   
   # A job to generate and publish code coverage
-  coverage:
-    name: Test and publish test coverage
+ # coverage:
+ #   name: Test and publish test coverage
     # The OS on which the job will run
-    runs-on: ubuntu-latest
+ #   runs-on: ubuntu-latest
 
     # The steps for the job, executed in sequence
     steps:
@@ -20,7 +34,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Set up Python
-        uses: actions/setup-python@master
+        uses: actions/setup-python@v2
         with:
           python-version: 3.8
        
@@ -34,10 +48,20 @@ jobs:
           pip install coverage
           coverage
           
-      - name: Run Flask tests
-        working-directory: earth-dashboard-ds/FLASK_RC1/application
-        run: 
-          python test.py
+      - name: Validate version
+        run: |
+          $pythonVersion = (python --version)
+          if ("Python ${{ matrix.python }}" -ne "$pythonVersion"){
+            Write-Host "The current version is $pythonVersion; expected version is ${{ matrix.python }}"
+            exit 1
+          }
+          $pythonVersion
+        shell: pwsh
+          
+     # - name: Run Flask tests
+     #   working-directory: earth-dashboard-ds/FLASK_RC1/application
+     #   run: 
+     #     python test.py
           
       - name: Run tests doc
         run:
