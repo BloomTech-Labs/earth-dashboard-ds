@@ -34,6 +34,9 @@ jobs:
           pip install coverage
           coverage
           
+      - name: Flask test doc
+      - run: python -m application.test
+          
       - name: Run test doc
         run:
           coverage run tests.py
