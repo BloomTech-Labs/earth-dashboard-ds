@@ -1,6 +1,6 @@
 import os, pathlib
-import pytest
+import import unittest
 
 os.chdir( pathlib.Path.cwd() / 'FLASK_RC1/application' )
 
-pytest.main()
+import unittest.main()
