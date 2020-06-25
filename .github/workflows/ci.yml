@@ -64,7 +64,7 @@ jobs:
           # Run our `coverage` script in our `package.json`
           coverageCommand: coverage run tests.py
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./github/workflows/coverage.xml:coverage.py"
+          coverageLocations: "earth-dashboard-ds/.github/workflows/coverage.xml:coverage.py"
           run: coverage xml
                if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_PYTHON_VERSION" == "3.6" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
           # Great for troubleshooting
