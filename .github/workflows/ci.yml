@@ -32,7 +32,7 @@ jobs:
       - name: Run pipfile
         run:
           pip install pipenv
-          PIPENV_CACHE_DIR=earth-dashboard-ds/FLASK pipenv install
+          pipenv install
 
       - name: Install coverage
         run:
