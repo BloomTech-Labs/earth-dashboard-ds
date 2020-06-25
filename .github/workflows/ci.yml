@@ -49,11 +49,12 @@ jobs:
           coverage run tests.py
           
       - name: Run test reporter
-        run:
-          codeclimate-test-reporter
         env:
         # An environment variable, the value is a GitHub repo secret
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+        run:
+          codeclimate-test-reporter
+
           
 ## testing connection below. ##
 
