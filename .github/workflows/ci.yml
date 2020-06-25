@@ -30,7 +30,7 @@ jobs:
           
       - name: Install pipfile
         run:   
-          pipenv install --target FLASK/
+          pipenv install FLASK/
           
       - name: Run unit tests
         run:
