@@ -32,15 +32,13 @@ jobs:
         run:   
           pipenv install
           
-      - name: Run unit tests
+      - name: Install pytest
         run:
           pip install pytest
-          pytest
 
       - name: Install coverage
         run:
-          pip install coverage
-          coverage
+          pip install coverage==4.3
           
       - name: Install test reporter
         run:
