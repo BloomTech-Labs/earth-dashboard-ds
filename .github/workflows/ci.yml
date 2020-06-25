@@ -27,7 +27,7 @@ jobs:
       - name: Run pipfile
         run:
           pip install pipenv
-          pipenv install -e FLASK
+          pipenv install -e /FLASK
           
       - name: Run unit tests
         run:
