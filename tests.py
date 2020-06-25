@@ -1,6 +1,6 @@
 import os, pathlib
- import pytest
+import pytest
 
- os.chdir( pathlib.Path.cwd() /FLASK/application )
+os.chdir( pathlib.Path.cwd() /FLASK/application )
 
- pytest.main()
+pytest.main()
