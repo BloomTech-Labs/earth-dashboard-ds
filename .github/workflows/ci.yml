@@ -27,7 +27,7 @@ jobs:
       - name: Run unit tests
         run:
           pip install pytest
-          pytest
+          pytest earth-dashboard-ds/FLASK/application/test.py
 
       - name: Install coverage
         run:
