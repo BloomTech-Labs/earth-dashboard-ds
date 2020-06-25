@@ -1,6 +1,8 @@
-import os, pathlib
-import pytest
+import unittest
 
-os.chdir( pathlib.Path.cwd() /FLASK/application )
+ class TestMethods(unittest.TestCase):
+     def test_add(self):
+         self.assertEqual(3, 3)
 
-pytest.main()
+ if __name__ == '__main__':
+     unittest.main()
