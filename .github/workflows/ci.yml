@@ -27,7 +27,7 @@ jobs:
       - name: Run pipfile
         run:
           pip install pipenv
-          pipenv install file://earth-dashboard-ds/FLASK
+          pipenv install /earth-dashboard-ds/FLASK
           
       - name: Run unit tests
         run:
