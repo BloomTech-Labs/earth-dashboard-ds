@@ -46,7 +46,7 @@ jobs:
 
       - name: Run tests
         run:
-          coverage run pytest tests.py
+          coverage run pytest
           
       - name: Run test reporter
         env:
