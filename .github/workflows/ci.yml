@@ -27,7 +27,11 @@ jobs:
       - name: Run unit tests
         run:
           pip install pytest
-          pytest /FLASK/application/test.py
+          pytest 
+      
+      - name: Run pipfile
+        run:
+          PIPENV_CACHE_DIR=earth-dashboard-ds/FLASK pipenv install
 
       - name: Install coverage
         run:
