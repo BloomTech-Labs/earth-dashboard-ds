@@ -46,7 +46,7 @@ jobs:
 
       - name: Run tests
         run:
-          coverage run pytest
+          coverage run 'earth-dashboard-ds/FLASK/application.test'
           
       - name: Run test reporter
         env:
